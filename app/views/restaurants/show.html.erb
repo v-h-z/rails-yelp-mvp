@@ -9,9 +9,14 @@
   <% @restaurant.reviews.each do |review| %>
     <li>
       <span> <%= "★" * review.rating + "☆" * (5-review.rating) %></span>
-      <span><%= review.content[0..30] %></span>
+      <span><%= review.content[0..60] %></span>
     </li>
   <% end %>
 </ul>
 
-<%= link_to "Add a new review", new_restaurant_review_path(@restaurant)  %>
+ <!-- <%= link_to "Add a new review", new_restaurant_review_path(@restaurant)  %> -->
+
+<div class="review_in_show my-5">
+  <h5>Add a new review!</h5>
+  <%= render 'form_review' %>
+</div>
